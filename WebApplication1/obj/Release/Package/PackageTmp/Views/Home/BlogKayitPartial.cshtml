@@ -1,0 +1,14 @@
+﻿@model  IEnumerable<WebApplication1.Models.Model.Blog>
+
+@foreach (var item in Model)
+{
+    <li>
+        <img src="@item.ResimURL" class="pull-left" alt="@item.Baslik" />
+        <h6><a href="/Home/BlogDetay/@item.BlogId">@item.Baslik</a></h6>
+        <p>
+            @Html.Raw(item.Icerik.Substring(0,150))
+        </p>
+    </li>
+}
+
+

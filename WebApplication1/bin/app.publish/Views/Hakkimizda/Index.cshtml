@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApplication1.Models.Model.Hakkimizda>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th></th>
+    </tr>
+
+  @foreach (var item in Model) 
+   {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aciklama)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelleme", "Edit", new { id=item.HakkmizdaId }) |
+          
+        </td>
+    </tr>
+   }
+
+</table>
